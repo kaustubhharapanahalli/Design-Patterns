@@ -1,7 +1,7 @@
 # Class Diagram to implement Strategy Pattern
 
 ```plantuml
-@startuml
+@startuml classDiagram
 class ShippingCost {
     + shipping_cost()
     + __init__(Strategy)
@@ -23,10 +23,13 @@ class UPSStrategy{
     + calculate()
 }
 
-ShippingCost "Context" o--> "Strategy" AbsStrategy : 1
+AbsStrategy "Strategy" <---o "Context" ShippingCost : 1
+
 AbsStrategy <|.. PostalStrategy
 AbsStrategy <|.. FedexStrategy
 AbsStrategy <|.. UPSStrategy
 
 @enduml
 ```
+
+![class diagram](images/classDiagram.png)
